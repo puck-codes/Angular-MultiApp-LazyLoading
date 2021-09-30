@@ -7,21 +7,19 @@ import { PizzasComponent } from './pizzas/pizzas.component';
 
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
-      PizzasComponent
-   ],
+    PizzasComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CorelibModule,
-  ],  
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
-  constructor(){
-    
-  }
+export class AppModule {
 
+  constructor() {
+  }
 }

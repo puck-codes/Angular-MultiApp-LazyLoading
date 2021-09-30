@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Autorize } from 'corelib';
 
 @Component({
@@ -6,14 +6,12 @@ import { Autorize } from 'corelib';
   templateUrl: './pizzas.component.html',
   styleUrls: ['./pizzas.component.css']
 })
-export class PizzasComponent  {
+
+export class PizzasComponent {
 
   constructor() { }
 
-
   @Autorize()
-  click(){
-
-  }
+  click() { }
 
 }

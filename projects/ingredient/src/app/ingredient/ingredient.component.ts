@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IngredientService } from '../service/ingredient.service';
+import { Autorize } from 'corelib';
 
 @Component({
   selector: 'app-ingredient',
@@ -8,17 +8,11 @@ import { IngredientService } from '../service/ingredient.service';
 })
 export class IngredientComponent implements OnInit {
 
-  constructor(private ingredientService: IngredientService) { }
+  constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit(): void { }
 
-  click(){
-    this.ingredientService.getAll().subscribe((data)=>{
-      console.log(data);
-    },(err)=>{
-      console.log(err);
-    })
-  }
+  @Autorize()
+  onClick() { }
 
 }

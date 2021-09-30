@@ -1,39 +1,36 @@
-import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CorelibModule } from 'corelib';
-
-import { AppRoutingModule } from './app-routing.module';
+import { ChildRoutingModule, RootRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { INTERCEPTORS } from 'corelib';
-import { HttpClientModule } from '@angular/common/http';
-import { IngredientComponent } from './ingredient/ingredient.component';
 
-const providers = [...INTERCEPTORS]
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IngredientComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RootRoutingModule,
     CorelibModule,
-    HttpClientModule,
   ],
-  providers: providers,
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
+
+
 @NgModule({
- })
-export class IngredientSharedModule{
-  static forRoot(): ModuleWithProviders {
+  imports: [
+    ChildRoutingModule,
+  ],
+})
+export class IngredientSharedModule {
+  static forRoot(): ModuleWithProviders<AppModule> {
     return {
-      ngModule: AppModule, 
-      providers: providers
-    }
+      ngModule: AppModule,
+      providers: []
+    };
   }
 }
